@@ -31,6 +31,9 @@ app.use(
 
 app.use("/auth", authRoute);
 app.use("/api/payment/", payment);
+app.get('/',async(req,res)=>{
+	res.send("helloo")
+})
 
 const port = process.env.PORT || 8080;
 app.listen(port, () => console.log(`Listenting on port ${port}...`));
