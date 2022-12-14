@@ -35,6 +35,10 @@ app.get('/',async(req,res)=>{
 	res.send("helloo")
 })
 
+app.get("auth/google", passport.authenticate("google", ["profile", "email"]));
+
+
+
 app.get(
 	"/auth/google/callback",
 	passport.authenticate("google", {
