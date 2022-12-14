@@ -23,7 +23,7 @@ router.get("/login/failed", (req, res) => {
 router.get("/google", passport.authenticate("google", ["profile", "email"]));
 
 router.get(
-	"/google/callback",
+	"/auth/google/callback",
 	passport.authenticate("google", {
 		successRedirect: "http://localhost:3000",
 		failureRedirect: "/login/failed",
