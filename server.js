@@ -35,5 +35,14 @@ app.get('/',async(req,res)=>{
 	res.send("helloo")
 })
 
+app.get(
+	"/auth/google/callback",
+	passport.authenticate("google", {
+		successRedirect: "http://localhost:3000",
+		failureRedirect: "/login/failed",
+	})
+);
+
+
 const port = process.env.PORT || 8080;
 app.listen(port, () => console.log(`Listenting on port ${port}...`));
